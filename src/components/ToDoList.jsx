@@ -1,13 +1,20 @@
 import React from 'react';
 import ToDo from "./ToDo";
 import s from './style.module.css';
+import {observer} from "mobx-react-lite";
+import AddToDo from "./AddToDo";
 
-const ToDoList = ({ todos, onDone }) => {
+const ToDoList = ({ todos }) => {
+    const handleAdd = (title) => {
+        todos.addTodo(title)
+    }
+
     return (
         <div className={s.todoList}>
-            {todos.map((todo) => (<ToDo key={todo.id} todo={todo} onClick={onDone}/>))}
+            <AddToDo onAdd={handleAdd} />
+            {todos.todos.map((todo) => (<ToDo key={todo.id} todo={todo} />))}
         </div>
     );
 };
 
-export default ToDoList;
+export default observer(ToDoList);
