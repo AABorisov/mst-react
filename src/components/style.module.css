@@ -1,0 +1,19 @@
+.todoList {
+    width: 20%;
+    margin: 50px auto auto;
+}
+
+.todo {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid gray;
+    text-align: left;
+}
+
+.todo:hover {
+    background-color: gray;
+}
+
+.todoTitle {
+    margin-left: 10px;
+}
